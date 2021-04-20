@@ -14,10 +14,12 @@ using namespace std;
 class Solution {
 public:
     int twoCitySchedCost(vector<vector<int>>& costs) {
-        sort(costs.begin(),costs.end(),wayToSort);
+        sort(costs.begin(),costs.end(),wayToSort); //Sort costs according two biggest cost
         int minCost = 0;
         int cityA = 0;
         int cityB = 0;
+        
+        // Iterate over vector and select the cost with minimum incurring cost 
         for(int i = 0; i < costs.size();++i){
           if(costs[i][0] < costs[i][1] && cityA < costs.size()/2){
                minCost += costs[i][0];
